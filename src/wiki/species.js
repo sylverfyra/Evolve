@@ -122,8 +122,8 @@ export function racesPage(content){
         });
         
         Object.keys(races[race].traits).sort().forEach(function (trait){
-            if (hallowed.active && (race === 'tortoisan' && trait === 'slow') || (race === 'unicorn' && trait === 'rainbow')){
-                return;
+            if (hallowed.active && ((race === 'tortoisan' && trait === 'slow') || (race === 'unicorn' && trait === 'rainbow'))){
+                return; //Do not display these traits during halloween event as the halloween versions dont have these traits.
             }
             let id = `raceTrait${race}${trait}`;
             let color = races[race].fanaticism === trait ? 'danger' : 'info';
